@@ -1,7 +1,7 @@
 lockfileVersion: 5.3
 
 specifiers:
-  '@types/fs-extra': ^11.0.4
+  '@types/fs-extra': ^9.0.13
   '@types/node': ^20.11.10
   check-is-array: ^2.0.6
   chokidar: ^3.5.3
@@ -9,7 +9,7 @@ specifiers:
   es-module-lexer: ^1.4.1
   esbuild: ^0.20.0
   fast-glob: ^3.3.2
-  fs-extra: ^11.2.0
+  fs-extra: ^10.1.0
   hash-sum: ^2.0.0
   magic-string: ^0.30.5
   resolve: ^1.22.8
@@ -26,7 +26,7 @@ dependencies:
   es-module-lexer: 1.4.1
   esbuild: 0.20.0
   fast-glob: 3.3.2
-  fs-extra: 11.2.0
+  fs-extra: 10.1.0
   hash-sum: 2.0.0
   magic-string: 0.30.5
   resolve: 1.22.8
@@ -34,7 +34,7 @@ dependencies:
   ws: 8.16.0
 
 devDependencies:
-  '@types/fs-extra': 11.0.4
+  '@types/fs-extra': 9.0.13
   '@types/node': 20.11.10
   tslib: 2.6.2
   tsup: 8.0.1_typescript@5.3.3
@@ -630,15 +630,8 @@ packages:
     resolution: {integrity: sha512-/kYRxGDLWzHOB7q+wtSUQlFrtcdUccpfy+X+9iMBpHK8QLLhx2wIPYuS5DYtR9Wa/YlZAbIovy7qVdB1Aq6Lyw==}
     dev: true
 
-  /@types/fs-extra/11.0.4:
-    resolution: {integrity: sha512-yTbItCNreRooED33qjunPthRcSjERP1r4MqCZc7wv0u2sUkzTFp45tgUfS5+r7FrZPdmCCNflLhVSP/o+SemsQ==}
-    dependencies:
-      '@types/jsonfile': 6.1.4
-      '@types/node': 20.11.10
-    dev: true
-
-  /@types/jsonfile/6.1.4:
-    resolution: {integrity: sha512-D5qGUYwjvnNNextdU59/+fI+spnwtTFmyQP0h+PfIOSkNfpU6AOICUOkm4i0OnSk+NyjdPJrxCDro0sJsWlRpQ==}
+  /@types/fs-extra/9.0.13:
+    resolution: {integrity: sha512-nEnwB++1u5lVDM2UI4c1+5R+FYaKfaAzS4OococimjVm3nQw3TuzH5UNsocrcTBbhnerblyHj4A49qXbIiZdpA==}
     dependencies:
       '@types/node': 20.11.10
     dev: true
@@ -977,9 +970,9 @@ packages:
     engines: {node: '>= 0.6'}
     dev: false
 
-  /fs-extra/11.2.0:
-    resolution: {integrity: sha512-PmDi3uwK5nFuXh7XDTlVnS17xJS7vW36is2+w3xcv8SVxiB4NyATf4ctkVY5bkSjX0Y4nbvZCq1/EjtEyr9ktw==}
-    engines: {node: '>=14.14'}
+  /fs-extra/10.1.0:
+    resolution: {integrity: sha512-oRXApq54ETRj4eMiFzGnHWGy+zo5raudjuxN0b8H7s/RU2oW0Wvsx9O0ACRN/kRq9E8Vu/ReskGB5o3ji+FzHQ==}
+    engines: {node: '>=12'}
     dependencies:
       graceful-fs: 4.2.11
       jsonfile: 6.1.0

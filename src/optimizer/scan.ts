@@ -1,7 +1,8 @@
 import { build } from 'esbuild';
 import { esbuildScanPlugin } from './esbuildScanPlugin';
 import path from 'path';
-async function scanImports(config: any) {
+
+export async function scanImports(config: any) {
     const depImports = {};
     const esPlugin = await esbuildScanPlugin(config, depImports);
     await build({
@@ -15,4 +16,3 @@ async function scanImports(config: any) {
     })
     return depImports;
 }
-module.exports = scanImports;

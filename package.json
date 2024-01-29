@@ -2,7 +2,8 @@
   "name": "thunder",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "dist/index.cjs",
+  "module": "dist/index.js",
   "type": "module",
   "bin": {
     "thunder": "./bin/thunder.js"
@@ -20,7 +21,7 @@
     "es-module-lexer": "^1.4.1",
     "esbuild": "^0.20.0",
     "fast-glob": "^3.3.2",
-    "fs-extra": "^11.2.0",
+    "fs-extra": "^10.1.0",
     "hash-sum": "^2.0.0",
     "magic-string": "^0.30.5",
     "resolve": "^1.22.8",
@@ -28,7 +29,7 @@
     "ws": "^8.16.0"
   },
   "devDependencies": {
-    "@types/fs-extra": "^11.0.4",
+    "@types/fs-extra": "^9.0.13",
     "@types/node": "^20.11.10",
     "tslib": "^2.6.2",
     "tsup": "^8.0.1",

@@ -1,10 +1,11 @@
-const scanImports = require('./scan');
-const fs = require('fs-extra');
-const path = require('path');
-const { build } = require('esbuild');
-const { normalizePath } = require('../utils');
 
-async function createOptimizeDepsRun(config) {
+import fs from 'fs-extra';
+import path from 'path';
+import { build } from 'esbuild';
+import { normalizePath } from '../utils';
+import { scanImports } from './scan';
+
+export async function createOptimizeDepsRun(config) {
     const deps = await scanImports(config);
     const { cacheDir } = config;
     const depsCacheDir = path.resolve(cacheDir, 'deps')
@@ -37,4 +38,3 @@ async function createOptimizeDepsRun(config) {
     }, 2));
     return { metadata };
 }
-exports.createOptimizeDepsRun = createOptimizeDepsRun;

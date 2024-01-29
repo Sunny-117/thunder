@@ -1,4 +1,7 @@
-import { readFile } from 'fs-extra';
+import fs from 'fs-extra';
+
+const { readFile } = fs;
+
 async function transformRequest(url, server) {
     const { pluginContainer } = server
     const { id } = await pluginContainer.resolveId(url);

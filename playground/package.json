@@ -1,0 +1,12 @@
+{
+  "name": "playground",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "thunder": "thunder"
+  },
+  "dependencies": {
+    "thunder": "link:.."
+  }
+}

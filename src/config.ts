@@ -1,5 +1,6 @@
 import path from 'path'
 import { resolvePlugins } from './plugins';
+import { normalizePath } from './utils';
 
 export async function resolveConfig() {
     const root = normalizePath(process.cwd());
