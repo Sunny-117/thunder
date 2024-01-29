@@ -10,11 +10,12 @@ export async function createServer() {
     const config = await resolveConfig();
     const middlewares = connect();
     const pluginContainer = await createPluginContainer(config)
+
     const httpServer = http.createServer(middlewares);
     const server = {
         pluginContainer,
         async listen(port) {
-            await runOptimize(config, server);
+            await runOptimize(config, server); // TODO: 报错
             httpServer.listen(port, async () => {
                 console.log(`dev server running at: http://localhost:${port}`)
             })

@@ -8,7 +8,11 @@ export function resolvePlugin(config) {
         resolveId(id, importer) {
             //如果/开头表示是绝对路径
             if (id.startsWith('/')) {
-                return { id: path.resolve(config.root, id.slice(1)) };
+                // console.log(config.root, id, 'config.root')
+                // const res = { id: path.resolve(config.root, id.slice(1)) };
+                // console.log(res, '------')
+                // return res;
+                return { id }
             }
             //如果是绝对路径
             if (path.isAbsolute(id)) {

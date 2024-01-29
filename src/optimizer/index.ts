@@ -31,7 +31,6 @@ export async function createOptimizeDepsRun(config) {
     await fs.ensureDir(depsCacheDir);
     await fs.writeFile(metadataPath, JSON.stringify(metadata, (key, value) => {
         if (key === 'file' || key === 'src') {
-            console.log(depsCacheDir, value);
             return normalizePath(path.relative(depsCacheDir, value));
         }
         return value

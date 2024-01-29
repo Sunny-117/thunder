@@ -16,6 +16,7 @@ export async function createPluginContainer({ plugins, root }) {
             for (const plugin of plugins) {
                 if (!plugin.resolveId) continue;
                 const result = await plugin.resolveId.call(ctx, id, importer);
+
                 if (result) {
                     resolveId = result.id || result;
                     break;
