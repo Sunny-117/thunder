@@ -1,0 +1,26 @@
+{
+  "name": "mini-vite",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "bin": {
+    "mini-vite": "./bin/mini-vite.js"
+  },
+  "scripts": {},
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "check-is-array": "^2.0.6",
+    "chokidar": "^3.5.3",
+    "connect": "^3.7.0",
+    "es-module-lexer": "^1.4.1",
+    "esbuild": "^0.20.0",
+    "fast-glob": "^3.3.2",
+    "fs-extra": "^11.2.0",
+    "hash-sum": "^2.0.0",
+    "magic-string": "^0.30.5",
+    "resolve": "^1.22.8",
+    "serve-static": "^1.15.0",
+    "ws": "^8.16.0"
+  }
+}
