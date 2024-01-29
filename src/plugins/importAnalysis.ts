@@ -1,6 +1,7 @@
-const { init, parse } = require('es-module-lexer')
-const MagicString = require('magic-string');
-function importAnalysisPlugin(config) {
+import { init, parse } from 'es-module-lexer';
+import MagicString from 'magic-string';
+
+export function importAnalysisPlugin(config) {
     const { root } = config
     return {
         name: 'thunder:import-analysis',
@@ -12,6 +13,7 @@ function importAnalysisPlugin(config) {
             }
             let ms = new MagicString(source);
             const normalizeUrl = async (url) => {
+                // @ts-ignore
                 const resolved = await this.resolve(url, importer)
                 if (resolved.id.startsWith(root + '/')) {
                     url = resolved.id.slice(root.length)
@@ -31,4 +33,3 @@ function importAnalysisPlugin(config) {
         }
     }
 }
-module.exports = importAnalysisPlugin;

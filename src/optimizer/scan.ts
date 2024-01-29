@@ -1,7 +1,7 @@
-const { build } = require('esbuild');
-const esbuildScanPlugin = require('./esbuildScanPlugin');
-const path = require('path');
-async function scanImports(config) {
+import { build } from 'esbuild';
+import { esbuildScanPlugin } from './esbuildScanPlugin';
+import path from 'path';
+async function scanImports(config: any) {
     const depImports = {};
     const esPlugin = await esbuildScanPlugin(config, depImports);
     await build({

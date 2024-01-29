@@ -1,7 +1,8 @@
 import connect from 'connect'
 import { createPluginContainer } from './pluginContainer';
-import transformMiddleware from './middlewares/transform';
-import serveStaticMiddleware from './middlewares/static';
+import { transformMiddleware } from './middlewares/transform';
+import { serveStaticMiddleware } from './middlewares/static';
+import { resolveConfig } from '../config';
 
 export async function createServer() {
     const config = await resolveConfig();

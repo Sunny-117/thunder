@@ -1,5 +1,5 @@
 
-export function preAliasPlugin() {
+export function preAliasPlugin(config) {
     let server
     return {
         name: 'thunder:pre-alias',

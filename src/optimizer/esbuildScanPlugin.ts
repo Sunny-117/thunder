@@ -1,13 +1,15 @@
-const fs = require('fs-extra');
-const path = require('path');
-const { createPluginContainer } = require('../server/pluginContainer');
-const resolvePlugin = require('../plugins/resolve');
-const { normalizePath } = require('../utils');
+
+import fs from 'fs-extra'
+import { resolvePlugin } from '../plugins/resolve';
+import { createPluginContainer } from '../server/pluginContainer';
+import { normalizePath } from '../utils';
+import path from 'path';
+
 const htmlTypesRE = /\.html$/
 const scriptModuleRE = /<script src\="(.+?)" type="module"><\/script>/;
 const JS_TYPES_RE = /\.js$/;
 
-async function esbuildScanPlugin(config, depImports) {
+export async function esbuildScanPlugin(config, depImports) {
     config.plugins = [resolvePlugin(config)];
     const container = await createPluginContainer(config)
     const resolve = async (id, importer) => {
@@ -45,7 +47,7 @@ async function esbuildScanPlugin(config, depImports) {
             })
             build.onLoad({ filter: htmlTypesRE, namespace: 'html' }, async ({ path }) => {
                 let html = fs.readFileSync(path, 'utf-8')
-                let [, scriptSrc] = html.match(scriptModuleRE);
+                let [, scriptSrc] = html.match(scriptModuleRE)!;
                 let js = `import ${JSON.stringify(scriptSrc)};\n`
                 return {
                     loader: 'js',
@@ -63,4 +65,3 @@ async function esbuildScanPlugin(config, depImports) {
         }
     }
 }
-module.exports = esbuildScanPlugin;

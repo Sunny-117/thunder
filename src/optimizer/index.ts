@@ -3,6 +3,7 @@ const fs = require('fs-extra');
 const path = require('path');
 const { build } = require('esbuild');
 const { normalizePath } = require('../utils');
+
 async function createOptimizeDepsRun(config) {
     const deps = await scanImports(config);
     const { cacheDir } = config;

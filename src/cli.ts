@@ -1,3 +1,4 @@
+import { createServer } from "./server";
 
 (async function () {
     const server = await createServer();
